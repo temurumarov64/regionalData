@@ -1,0 +1,12 @@
+.bold {
+  font-weight: 600;
+}
+.normal {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.light {
+  font-weight: 400;
+  font-size: 13px;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>RegionData</title>
+  </head>
+
+  <body>
+    <div style="display: flex">
+      <div class="container w-25">
+        <h6
+          style="
+            color: #5bc0de;
+            padding: 10px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+          "
+          className="title"
+        >
+          Please select your country and press <br />a button to obtain data
+        </h6>
+
+        <select
+          class="form-control mb-4"
+          onchange="load()"
+          lang="en"
+          id="language"
+        >
+          <option>Choose your country</option>
+          <option>Deutschland</option>
+          <option>United Kingdom</option>
+          <option>Україна</option>
+        </select>
+        <input
+          style="display: none"
+          type="text"
+          placeholder="Set the amount of error"
+          class="form-control mb-4"
+          lang="en"
+          id="erren"
+        />
+        <input
+          style="display: none"
+          type="text"
+          placeholder="Встановіть кількість помилок"
+          class="form-control mb-4"
+          lang="uk"
+          id="erruk"
+        />
+        <input
+          type="text"
+          placeholder="Anzahl der Fehler"
+          class="form-control mb-4"
+          lang="de"
+          id="errde"
+        />
+        <input
+          style="display: none"
+          type="text"
+          placeholder="Set the seed"
+          class="form-control mb-4"
+          lang="en"
+          id="seeden"
+        />
+        <input
+          style="display: none"
+          type="text"
+          placeholder="Встановіть значення seed"
+          class="form-control"
+          lang="uk"
+          id="seeduk"
+        />
+        <input
+          type="text"
+          placeholder="Legen Sie den Seed"
+          class="form-control"
+          lang="de"
+          id="seedde"
+        />
+        <input
+          class="btn btn-info my-4"
+          type="button"
+          value="Obtain Data"
+          onclick="update()"
+          lang="en"
+          style="display: none"
+        />
+        <button
+          class="btn btn-light my-4"
+          onclick="excel(this,1)"
+          data-table="table"
+          lang="en"
+          style="display: none"
+        >
+          Download Excel
+        </button>
+        <input
+          class="btn btn-info my-4"
+          type="button"
+          value="Отримати дані"
+          onclick="update()"
+          lang="uk"
+          style="display: none"
+        />
+        <button
+          class="btn btn-light my-4"
+          onclick="excel(this,1)"
+          data-table="table"
+          lang="uk"
+          style="display: none"
+        >
+          Завантажити Excel
+        </button>
+        <input
+          class="btn btn-info my-4"
+          type="button"
+          value="Daten becommen"
+          onclick="update()"
+          lang="de"
+        />
+
+        <button
+          class="btn btn-light my-4"
+          onclick="excel(this,1)"
+          data-table="table"
+          lang="de"
+        >
+          Excel herunterladen
+        </button>
+      </div>
+      <div class="container w-50">
+        <table
+          class="table table-sm table-bordered mt-5 table-hover"
+          id="table"
+        >
+          <thead>
+            <tr class="table-dark" style="text-align: left; font-size: small">
+              <td class="bold" scope="col">#</td>
+              <td class="bold" scope="col">ID</td>
+              <td class="bold" scope="col">Name & Surname</td>
+              <td class="bold" scope="col">Address</td>
+              <td class="bold" scope="col">Phone</td>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js"></script>
+    <script src="./excel.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
